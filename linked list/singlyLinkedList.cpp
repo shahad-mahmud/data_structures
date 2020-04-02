@@ -9,50 +9,51 @@ private:
     };
     node* head = NULL;
     node* previous_node = NULL;
-    int s = 0;
+    int sizeOfList = 0;
 
 public:
-    void insert_data(int data){
+    void add(int data){
         node* newNode = (node*) malloc(sizeof(node));
         newNode->data = data;
         newNode->next = NULL;
 
-        if (head == NULL){
+        if(head == NULL){
             head = newNode;
         }
+
         if(previous_node != NULL){
-            previous_node->next = newNode; 
+            previous_node->next = newNode;
         }
-        
-        previous_node = newNode;   
-        s++;     
+        previous_node = newNode;
+        sizeOfList++;
     }
 
     void traverse_list(){
         node* iterator = head;
 
-        while(iterator != NULL){
-            cout << iterator -> data << " ";
-            iterator = iterator -> next;
+        while(iterator!=NULL){
+            cout << iterator->data << " ";
+            iterator = iterator->next;
         }
     }
 
     int size(){
-        return s;
+        return sizeOfList;
     }
-    
-
 };
 
 int main(){
     LinkedList list;
 
-    list.insert_data(3);
-    list.insert_data(8);
+    list.add(5);
+    list.add(35);
+    list.add(60);
 
+    cout << "Values of the list: ";
     list.traverse_list();
+    cout << endl;
 
-    cout << list.size();
+    cout << "Size of the List is: " << list.size() << endl;
 
     return 0;
 }
