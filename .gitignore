@@ -6,6 +6,7 @@
 
 # do not ignore cpp files
 !*.cpp
+test.cpp
 
 # do not ignore .gitignore file
 !.gitignore
